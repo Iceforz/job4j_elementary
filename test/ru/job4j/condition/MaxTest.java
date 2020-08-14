@@ -8,20 +8,24 @@ import static org.junit.Assert.*;
 
 public class MaxTest {
 
+    @Test
+    public void whenFirstLessSecond() {
+        Max maxim = new Max();
+        int result = maxim.max(1, 2);
+        assertThat(result, is(2));
+    }
 
     @Test
-    public void firstMax() {
-        int result = Max.max(1, 2);
-        assertThat(result, is(2));
+    public void whenThird() {
+        Max maxim = new Max();
+        int result = maxim.max(5, 2, 3);
+        assertThat(result, is(5));
     }
+
     @Test
-    public void secondMax() {
-        int result = Max.max(2, 1);
-        assertThat(result, is(2));
-    }
-    @Test
-    public void firstEqSecond() {
-        int result = Max.max(1, 1);
-        assertThat(result, is(1));
+    public void whenFourth() {
+        Max maxim = new Max();
+        int result = maxim.max(5, 2, 3, 20);
+        assertThat(result, is(20));
     }
 }
