@@ -1,18 +1,22 @@
 package ru.job4j.condition;
-
-import org.junit.Assert;
 import org.junit.Test;
 
-public class PointTest {
+import static org.junit.Assert.assertEquals;
 
+
+public class PointTest {
     @Test
-    public void distance(int x1) {
-        int in1 = 0;
-        int in2 = 0;
-        int in3 = 2;
-        int in4 = 0;
-        double expected = Math.sqrt((in3 - in1)*(in3 - in1) + (in4 - in2)*(in4 - in2));
-        double out = Point.distance(in1 , in2, in3, in4);
-        Assert.assertEquals(expected, out, 0.01);
+    public void thenTwoPointWhen() {
+        Point first = new Point(1, 1);
+        Point second = new Point(2, 2);
+        double expect = first.distance(second);
+        assertEquals(expect, 1.41, 0.01);
+    }
+    @Test
+    public void thenPoint3DWhen() {
+        Point first = new Point(1, 1, 1);
+        Point second = new Point(2, 3, 4);
+        double expect = first.distance3d(second);
+        assertEquals(expect, 3.74d, 0.01);
     }
 }
